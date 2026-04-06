@@ -1,0 +1,161 @@
+:root {
+  --bg: #0b1020;
+  --panel: #151c33;
+  --panel-soft: #1c2542;
+  --text: #edf2ff;
+  --muted: #b7c2e3;
+  --line: #2f3b64;
+  --accent: #ffd166;
+  --success: #53d087;
+  --pending: #9aa7cf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(180deg, #080d1d 0%, #0f1730 55%, #111a35 100%);
+  color: var(--text);
+}
+
+.hero {
+  width: min(1100px, 92vw);
+  margin: 24px auto 12px;
+  background: rgba(21, 28, 51, 0.88);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.league-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  padding: 6px;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin: 0 0 2px;
+}
+
+.subtext {
+  margin: 6px 0 2px;
+  color: var(--muted);
+}
+
+.updated-at {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--pending);
+}
+
+.layout {
+  width: min(1100px, 92vw);
+  margin: 0 auto 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: rgba(21, 28, 51, 0.88);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.badge {
+  font-size: 0.8rem;
+  color: #0f1730;
+  font-weight: 700;
+  background: var(--accent);
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+
+.table-wrap {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 10px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+thead th {
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+  color: #d3ddfa;
+}
+
+tbody tr:hover {
+  background: var(--panel-soft);
+}
+
+.pos {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.status-completed {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.status-pending {
+  color: var(--pending);
+}
+
+.note {
+  margin: 12px 0 2px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+code {
+  font-family: Consolas, monospace;
+  background: #0c1430;
+  border: 1px solid var(--line);
+  padding: 1px 5px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}

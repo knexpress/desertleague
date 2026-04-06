@@ -1,0 +1,288 @@
+:root {
+  --bg: #050913;
+  --panel: rgba(18, 24, 46, 0.84);
+  --panel-soft: #1f2a4f;
+  --line: #2f3c69;
+  --text: #edf2ff;
+  --muted: #b6c1e2;
+  --accent: #ffd166;
+  --ok: #53d087;
+  --pending: #9da9cf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: radial-gradient(circle at 20% 10%, #17264a, #091228 45%, var(--bg));
+}
+
+.page {
+  position: relative;
+  width: min(1120px, 92vw);
+  margin: 24px auto;
+  display: grid;
+  gap: 16px;
+}
+
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(240px 240px at 20% 20%, rgba(255, 209, 102, 0.08), transparent 70%),
+    radial-gradient(320px 320px at 85% 10%, rgba(85, 183, 255, 0.08), transparent 75%);
+  animation: drift 8s ease-in-out infinite alternate;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-wrap {
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.3rem, 2.6vw, 2rem);
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.subtext {
+  margin: 6px 0 2px;
+  color: var(--muted);
+}
+
+.updated-at {
+  margin: 0;
+  color: var(--pending);
+  font-size: 0.9rem;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.badge {
+  font-size: 0.8rem;
+  color: #0f1730;
+  font-weight: 700;
+  background: var(--accent);
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+thead th {
+  color: #d8e0fa;
+  font-size: 0.82rem;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+}
+
+.row-animate {
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.row-animate:hover {
+  transform: translateX(4px);
+  background: var(--panel-soft);
+}
+
+.pos {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.status-completed {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.status-pending {
+  color: var(--pending);
+}
+
+.note {
+  margin: 12px 0 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.admin-grid label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.admin-grid input,
+.admin-grid select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0c1430;
+  color: var(--text);
+  padding: 9px 10px;
+  outline: none;
+}
+
+.admin-grid input:focus,
+.admin-grid select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255, 209, 102, 0.2);
+}
+
+.admin-full {
+  grid-column: 1 / -1;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+button {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #0f1730;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 9px 12px;
+  cursor: pointer;
+  transition: transform 140ms ease, opacity 140ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.secondary {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--text);
+}
+
+code {
+  font-family: Consolas, monospace;
+  background: #09122b;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 1px 5px;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 650ms ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 120ms;
+}
+
+.delay-2 {
+  animation-delay: 220ms;
+}
+
+.pulse {
+  animation: pulseGlow 2.2s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(255, 209, 102, 0);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 209, 102, 0.35);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(14px) scale(1.02);
+  }
+}
+
+@media (max-width: 780px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}

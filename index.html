@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desert League Season 1 (2026) - Live Points Table</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <img src="desert_league_logo.png" alt="Desert League logo" class="league-logo">
+    <div>
+      <p class="eyebrow">Live Tournament Tracker</p>
+      <h1>Desert League Season 1 (2026)</h1>
+      <p class="subtext">Public live points table and fixtures</p>
+      <p id="lastUpdated" class="updated-at"></p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <div class="card-title-row">
+        <h2>Points Table</h2>
+        <span class="badge">2 pts win | 1 pt tie/no result</span>
+      </div>
+      <div class="table-wrap">
+        <table id="pointsTable">
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th>Team</th>
+              <th>P</th>
+              <th>W</th>
+              <th>L</th>
+              <th>T</th>
+              <th>NR</th>
+              <th>Pts</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Fixtures & Results</h2>
+      <div class="table-wrap">
+        <table id="fixturesTable">
+          <thead>
+            <tr>
+              <th>Match</th>
+              <th>Date</th>
+              <th>Teams</th>
+              <th>Time</th>
+              <th>Status</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note">
+        To update live standings, edit the <code>status</code> and <code>winner</code> values for each match in <code>script.js</code>.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
