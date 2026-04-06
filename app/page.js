@@ -47,7 +47,6 @@ export default function HomePage() {
         <div>
           <p className="eyebrow">Live Tournament Tracker</p>
           <h1>Desert League Season 1 (2026)</h1>
-          <p className="subtext">Frontend-only Next.js live points table</p>
           <p className="updated-at">
             Last updated: {updatedAt || "Loading..."}
           </p>
@@ -131,10 +130,6 @@ export default function HomePage() {
             </tbody>
           </table>
         </div>
-        <p className="note">
-          Fixtures update live from admin path <code>/09087801</code>. NRR is
-          calculated from runs and overs entered there.
-        </p>
       </section>
     </main>
   );
